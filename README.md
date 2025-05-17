@@ -10,7 +10,7 @@
 
 ### Descripción
 
-Este proyecto es una infografía que explora la evolución de **Butters Stotch** de *South Park*. La pieza presenta líneas de tiempo, datos comparativos y visualizaciones dinámicas que destacan el desarrollo de Butters y su alter ego **Profesor Caos**, así como su contraste con los personajes principales de la serie: Cartman, Stan, Kyle y Kenny.
+Este proyecto es una infografía que explora la evolución de **Leopold "Butters" Stotch** de **South Park**,con líneas de tiempo, datos comparativos y visualizaciones dinámicas que destacan el desarrollo de Butters y su alter ego **Professor Chaos**, así como su contraste con los personajes principales de la serie: Cartman, Stan, Kyle y Kenny.
 
 
 ### Contenido
