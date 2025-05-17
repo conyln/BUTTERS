@@ -25,8 +25,8 @@ Este proyecto es una infografía que explora la evolución de **Leopold "Butters
 ### Lenguajes utilizados
 
 - **HTML**
-- **CSS (Tailwind)**
-- **JavaScript (Chart.js)**
+- **CSS**
+- **JavaScript**
 
 
 ### Referentes
