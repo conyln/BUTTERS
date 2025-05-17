@@ -1,11 +1,11 @@
 # BUTTERS 
-##INFOGRAFÍA
+## INFOGRAFÍA
 
 
 💡 *“Dude, I’m just happy to be here.” – Butters Stotch*
 
 
-![Butters]([https://static.wikia.nocookie.net/southpark/images/0/06/ButtersStotch.png/revision/latest?cb=20190411032405](https://pa1.aminoapps.com/6649/a280bbaa1c598289b870a00031ae0366f15034f7_hq.gif))
+![Butters](https://pa1.aminoapps.com/6649/a280bbaa1c598289b870a00031ae0366f15034f7_hq.gif)
 
 
 ### Descripción
