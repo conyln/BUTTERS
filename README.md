@@ -43,9 +43,10 @@ Este proyecto es una infografía que explora la evolución de **Leopold "Butters
 
 - [South Park Wiki / Public Library](https://southpark.fandom.com/wiki/South_Park_Public_Library)
 - [IMDb – South Park](https://www.imdb.com/es/title/tt0121955/)
-- [Análisis textual de South Park con R (Vertabelo Academy)](https://academy.vertabelo.com/blog/south-park-text-data-analysis-with-r-2/)
+- [Going Down to South Park, Part 2: Text Analysis with R](https://academy.vertabelo.com/blog/south-park-text-data-analysis-with-r-2/)
 - [Text Mining South Park (Kaylin Pavlik)](https://www.kaylinpavlik.com/text-mining-south-park/)
-- [Análisis de personaje: Eddie Wharton](https://eddiewharton.com/2016/05/27/south-park/)
+- [South Park Text Analysis: They Stopped Killing Kenny and the Rise of Randy
+](https://eddiewharton.com/2016/05/27/south-park/)
 
 
-uwu
+☆
