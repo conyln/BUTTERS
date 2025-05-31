@@ -2,7 +2,7 @@
 ## INFOGRAFÍA
 
 
-*“Dude, I’m just happy to be here.” – Butters Stotch*
+*“Dude, I’m just happy to be here.” – Butters Stotch 🌼* 
 
 
 ![Butters](https://pa1.aminoapps.com/6649/a280bbaa1c598289b870a00031ae0366f15034f7_hq.gif)
