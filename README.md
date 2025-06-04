@@ -15,11 +15,12 @@ Este proyecto es una infografía que explora la evolución de **Leopold "Butters
 
 ### Contenido
 
-1. **Evolución del personaje**  
-2. **Dualidad de identidad: BUTTERS VS PROFESSOR CHAOS**  
-3. **Comparación con personajes principales**  
-4. **Presencia por temporada**  
-5. **Delitos cometidos**
+0. **Existencia de Butters**
+1. **Evolución del rol**
+2. **Evolución de presencia por temporada**
+3. **Comparación con personajes principales Butters vs Stan vs Kyle vs Cartman vs Kenny**  
+5. **Dualidad de identidad: BUTTERS VS PROFESSOR CHAOS**  
+6. **Delitos cometidos: Butters vs Proffessor Chaos vs Cartman**
 
 
 ### Lenguajes utilizados
