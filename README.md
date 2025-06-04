@@ -37,6 +37,7 @@ Este proyecto es una infografía que explora la evolución de **Leopold "Butters
 | [Pele Infographic - SCMP](https://multimedia.scmp.com/infographics/sport/article/3208740/pele/index.html) | Uso de imáges y gráficos de progresión. |
 | [Habemus Papa Infographic - SCMP](https://multimedia.scmp.com/infographics/news/world/article/3310236/habemus-papa/index.html) | Combinación de imágenes y texto para contar una historia. |
 | [The Fact Site - South Park Infographic](https://www.thefactsite.com/facts-about-south-park/) | Identidad visual de la serie. |
+| [How Electricity Is Changing, Country by Country] (https://www.nytimes.com/interactive/2023/11/20/climate/global-power-electricity-fossil-fuels-coal.html) | Gráfico de crecimiento comparativo. |
 
 
 ### Fuentes
