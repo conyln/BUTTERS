@@ -1,0 +1,142 @@
+[
+  {
+    "delito": "Fraude",
+    "descripcion": "Se atribuye la autoría de un libro escrito por otros (\"The Tale of Scrotie McBoogerballs\").",
+    "gravedad": "Leve",
+    "episodio": "The Tale of Scrotie McBoogerballs",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Proxenetismo",
+    "descripcion": "Inicia una \"empresa de besos\" que involucra eventualmente prostitutas reales.",
+    "gravedad": "Media",
+    "episodio": "Butters' Bottom B****",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Terrorismo",
+    "descripcion": "Amenaza con hacer explotar un hospital junto a General Disarray y Cartman. Participa en toma de rehenes en un restaurante.",
+    "gravedad": "Alta",
+    "episodio": "The Coon; The China Probrem",
+    "alias": "Profesor Caos"
+  },
+  {
+    "delito": "Chantaje",
+    "descripcion": "Amenaza con divulgar un video vergonzoso de Cartman si vuelve a molestarlo.",
+    "gravedad": "Media",
+    "episodio": "AWESOM-O",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Robo de auto",
+    "descripcion": "Ayuda a Cartman a robar un auto NASCAR, lo que provoca múltiples muertes.",
+    "gravedad": "Alta",
+    "episodio": "Poor and Stupid",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Allanamiento de morada",
+    "descripcion": "Ingresa a casas o propiedades sin permiso por motivos varios.",
+    "gravedad": "Leve",
+    "episodio": "Ginger Kids; Cow Days",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Homicidio involuntario",
+    "descripcion": "Provoca muertes accidentales al hacer tap dance.",
+    "gravedad": "Alta",
+    "episodio": "You Got F'd in the A; I'm a Little Bit Country",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Asesinato",
+    "descripcion": "Mata a un soldado disfrazado de alien por orden presidencial.",
+    "gravedad": "Justificable",
+    "episodio": "Sexual Healing",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Piratería",
+    "descripcion": "Se une a piratas somalíes y comete saqueos.",
+    "gravedad": "Alta",
+    "episodio": "Fatbeard",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Crímenes de guerra",
+    "descripcion": "Participa en una milicia sudista ebria en una recreación histórica.",
+    "gravedad": "Justificable",
+    "episodio": "The Red Badge of Gayness",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Intento de catástrofe global",
+    "descripcion": "Planea inundar el mundo con una manguera como Profesor Caos.",
+    "gravedad": "Leve",
+    "episodio": "Professor Chaos",
+    "alias": "Profesor Caos"
+  },
+  {
+    "delito": "Agresión con arma letal",
+    "descripcion": "Dispara accidentalmente a personas durante una toma de rehenes.",
+    "gravedad": "Alta",
+    "episodio": "The China Probrem",
+    "alias": "Profesor Caos"
+  },
+  {
+    "delito": "Agresión sexual",
+    "descripcion": "Toca indebidamente a Paris Hilton mientras está inconsciente; pincha a una niña durante San Patricio.",
+    "gravedad": "Alta",
+    "episodio": "Stupid Spoiled W**** Video Playset; St. Patrick’s Day",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Exhibicionismo",
+    "descripcion": "Se muestra desnudo públicamente en múltiples ocasiones.",
+    "gravedad": "Media",
+    "episodio": "Safe Space; Wieners Out",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Publicidad engañosa",
+    "descripcion": "Distribuye una bebida que resulta ser su propio semen.",
+    "gravedad": "Alta",
+    "episodio": "Sarcastaball",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Incendio intencional",
+    "descripcion": "Quema el gimnasio escolar (implícitamente).",
+    "gravedad": "Media",
+    "episodio": "Gluten Free Ebola",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Alteración del orden público",
+    "descripcion": "Participa en disturbios en un mall y en una guerra de géneros escolares.",
+    "gravedad": "Media",
+    "episodio": "Merry Christmas Charlie Manson!; Proper Condom Use",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Sedición",
+    "descripcion": "Se une a La Resistance para evitar una ejecución gubernamental.",
+    "gravedad": "Justificable",
+    "episodio": "South Park: Bigger, Longer & Uncut",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Fraude electoral",
+    "descripcion": "Participa en conspiración para alterar resultados de elección.",
+    "gravedad": "Alta",
+    "episodio": "Obama Wins!",
+    "alias": "Butters"
+  },
+  {
+    "delito": "Lesiones",
+    "descripcion": "Golpea violentamente a otro niño.",
+    "gravedad": "Media",
+    "episodio": "Going Native",
+    "alias": "Butters"
+  }
+]
