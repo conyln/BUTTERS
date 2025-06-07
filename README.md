@@ -53,3 +53,4 @@ Este proyecto es una infografía que explora la evolución de **Leopold "Butters
 ☆
 
 https://giphy.com/southpark 
+https://south-park-alter-egos.fandom.com/wiki/Butters_Stotch_Alter_Egos 
