@@ -1,7 +1,8 @@
 // script.js
 
 // URL del JSON externo
-const DATA_URL = "https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json";
+const DATA_URL =
+  "https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json";
 
 // Cargar datos y ejecutar renderizadores
 fetch(DATA_URL)
@@ -9,7 +10,10 @@ fetch(DATA_URL)
   .then((data) => {
     renderRoleEvolution(data.roleEvolution);
     renderPresencePerSeason(data.presenceBySeason);
-    renderProtagonismComparison(data.presenceBySeason, data.characterComparison);
+    renderProtagonismComparison(
+      data.presenceBySeason,
+      data.characterComparison
+    );
     renderStatsComparison(data.characterComparison);
     renderCrimes(data.crimes);
   })
@@ -103,10 +107,19 @@ function renderProtagonismComparison(presenceData, characters) {
   svg.attr("width", width).attr("height", height);
 
   // Asumimos que Butters es el primero del array
-  const buttersData = presenceData.map((d) => ({ season: d.season, episodes: d.episodes }));
+  const buttersData = presenceData.map((d) => ({
+    season: d.season,
+    episodes: d.episodes,
+  }));
 
-  const xScale = d3.scaleLinear().domain([1, 26]).range([40, width - 40]);
-  const yScale = d3.scaleLinear().domain([0, d3.max(buttersData, (d) => d.episodes)]).range([height - 40, 20]);
+  const xScale = d3
+    .scaleLinear()
+    .domain([1, 26])
+    .range([40, width - 40]);
+  const yScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(buttersData, (d) => d.episodes)])
+    .range([height - 40, 20]);
 
   const line = d3
     .line()
@@ -160,29 +173,28 @@ function renderCrimes(crimes) {
 
     const div = document.createElement("div");
     div.className = `crime-item crime-${crime.severity}`;
+
+    const gifMap = {
+      Justified:
+        "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KeJaNM7Uee43KoodYn/giphy.gif",
+      Low: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KeJaNM7Uee43KoodYn/giphy.gif",
+      Medium:
+        "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fq8aPV216Lu5CdKtjt/giphy.gif",
+      High: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SqqNETwLOEu6VbHLNj/giphy.gif",
+    };
+
+    const gifUrl = gifMap[crime.severity] || gifMap["Low"];
     div.innerHTML = `
-      <p><strong>${crime.crime}</strong> (${crime.alias})</p>
-      <p>${crime.description}</p>
-      <p><em>Episode: ${crime.episode}</em></p>
+      <img src="${gifUrl}" alt="Butters dancing ${crime.severity} severity" class="crime-gif" style="width:80px;float:left;margin-right:1rem;border-radius:8px;box-shadow:0 0 5px #ddd;">
+      <div>
+        <p><strong>${crime.crime}</strong> (${crime.alias})</p>
+        <p>${crime.description}</p>
+        <p><em>Episode: ${crime.episode}</em></p>
+      </div>
     `;
 
     container.appendChild(div);
     div.style.animation = `fadeInUp 0.6s ease forwards`;
-
-    const gifMap = {
-      Justified: "gif-justified-low",
-      Low: "gif-justified-low",
-      Medium: "gif-medium",
-      High: "gif-high",
-    };
-
-    const gifs = document.querySelectorAll(".gifs-column img");
-    gifs.forEach((gif) => (gif.style.display = "none"));
-    const gifId = gifMap[crime.severity];
-    if (gifId) {
-      const currentGif = document.getElementById(gifId);
-      if (currentGif) currentGif.style.display = "block";
-    }
 
     index++;
     setTimeout(showNextCrime, 1800);
