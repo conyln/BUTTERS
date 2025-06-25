@@ -1,142 +1,331 @@
-[
-  {
-    "delito": "Fraude",
-    "descripcion": "Se atribuye la autoría de un libro escrito por otros (\"The Tale of Scrotie McBoogerballs\").",
-    "gravedad": "Leve",
-    "episodio": "The Tale of Scrotie McBoogerballs",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Proxenetismo",
-    "descripcion": "Inicia una \"empresa de besos\" que involucra eventualmente prostitutas reales.",
-    "gravedad": "Media",
-    "episodio": "Butters' Bottom B****",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Terrorismo",
-    "descripcion": "Amenaza con hacer explotar un hospital junto a General Disarray y Cartman. Participa en toma de rehenes en un restaurante.",
-    "gravedad": "Alta",
-    "episodio": "The Coon; The China Probrem",
-    "alias": "Profesor Caos"
-  },
-  {
-    "delito": "Chantaje",
-    "descripcion": "Amenaza con divulgar un video vergonzoso de Cartman si vuelve a molestarlo.",
-    "gravedad": "Media",
-    "episodio": "AWESOM-O",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Robo de auto",
-    "descripcion": "Ayuda a Cartman a robar un auto NASCAR, lo que provoca múltiples muertes.",
-    "gravedad": "Alta",
-    "episodio": "Poor and Stupid",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Allanamiento de morada",
-    "descripcion": "Ingresa a casas o propiedades sin permiso por motivos varios.",
-    "gravedad": "Leve",
-    "episodio": "Ginger Kids; Cow Days",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Homicidio involuntario",
-    "descripcion": "Provoca muertes accidentales al hacer tap dance.",
-    "gravedad": "Alta",
-    "episodio": "You Got F'd in the A; I'm a Little Bit Country",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Asesinato",
-    "descripcion": "Mata a un soldado disfrazado de alien por orden presidencial.",
-    "gravedad": "Justificable",
-    "episodio": "Sexual Healing",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Piratería",
-    "descripcion": "Se une a piratas somalíes y comete saqueos.",
-    "gravedad": "Alta",
-    "episodio": "Fatbeard",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Crímenes de guerra",
-    "descripcion": "Participa en una milicia sudista ebria en una recreación histórica.",
-    "gravedad": "Justificable",
-    "episodio": "The Red Badge of Gayness",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Intento de catástrofe global",
-    "descripcion": "Planea inundar el mundo con una manguera como Profesor Caos.",
-    "gravedad": "Leve",
-    "episodio": "Professor Chaos",
-    "alias": "Profesor Caos"
-  },
-  {
-    "delito": "Agresión con arma letal",
-    "descripcion": "Dispara accidentalmente a personas durante una toma de rehenes.",
-    "gravedad": "Alta",
-    "episodio": "The China Probrem",
-    "alias": "Profesor Caos"
-  },
-  {
-    "delito": "Agresión sexual",
-    "descripcion": "Toca indebidamente a Paris Hilton mientras está inconsciente; pincha a una niña durante San Patricio.",
-    "gravedad": "Alta",
-    "episodio": "Stupid Spoiled W**** Video Playset; St. Patrick’s Day",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Exhibicionismo",
-    "descripcion": "Se muestra desnudo públicamente en múltiples ocasiones.",
-    "gravedad": "Media",
-    "episodio": "Safe Space; Wieners Out",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Publicidad engañosa",
-    "descripcion": "Distribuye una bebida que resulta ser su propio semen.",
-    "gravedad": "Alta",
-    "episodio": "Sarcastaball",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Incendio intencional",
-    "descripcion": "Quema el gimnasio escolar (implícitamente).",
-    "gravedad": "Media",
-    "episodio": "Gluten Free Ebola",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Alteración del orden público",
-    "descripcion": "Participa en disturbios en un mall y en una guerra de géneros escolares.",
-    "gravedad": "Media",
-    "episodio": "Merry Christmas Charlie Manson!; Proper Condom Use",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Sedición",
-    "descripcion": "Se une a La Resistance para evitar una ejecución gubernamental.",
-    "gravedad": "Justificable",
-    "episodio": "South Park: Bigger, Longer & Uncut",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Fraude electoral",
-    "descripcion": "Participa en conspiración para alterar resultados de elección.",
-    "gravedad": "Alta",
-    "episodio": "Obama Wins!",
-    "alias": "Butters"
-  },
-  {
-    "delito": "Lesiones",
-    "descripcion": "Golpea violentamente a otro niño.",
-    "gravedad": "Media",
-    "episodio": "Going Native",
-    "alias": "Butters"
-  }
-]
+{
+    "existence": [
+        {
+            "year": 1997,
+            "description": "Background character without name",
+            "season": 1
+        },
+        {
+            "year": 2000,
+            "description": "First referred to as Butters",
+            "season": 4
+        },
+        {
+            "year": 2002,
+            "description": "Becomes main character in some episodes",
+            "season": 6
+        },
+        {
+            "year": 2005,
+            "description": "Official member of the main group",
+            "season": 9
+        }
+    ],
+    "roleEvolution": [
+        {
+            "season": 1,
+            "role": "background"
+        },
+        {
+            "season": 4,
+            "role": "named"
+        },
+        {
+            "season": 6,
+            "role": "sidekick"
+        },
+        {
+            "season": 9,
+            "role": "main"
+        },
+        {
+            "season": 15,
+            "role": "leading roles"
+        }
+    ],
+    "presenceBySeason": [
+        {
+            "season": 1,
+            "episodes": 2
+        },
+        {
+            "season": 2,
+            "episodes": 4
+        },
+        {
+            "season": 3,
+            "episodes": 5
+        },
+        {
+            "season": 4,
+            "episodes": 6
+        },
+        {
+            "season": 5,
+            "episodes": 9
+        },
+        {
+            "season": 6,
+            "episodes": 11
+        },
+        {
+            "season": 7,
+            "episodes": 10
+        },
+        {
+            "season": 8,
+            "episodes": 12
+        },
+        {
+            "season": 9,
+            "episodes": 13
+        },
+        {
+            "season": 10,
+            "episodes": 14
+        },
+        {
+            "season": 11,
+            "episodes": 10
+        },
+        {
+            "season": 12,
+            "episodes": 8
+        },
+        {
+            "season": 13,
+            "episodes": 9
+        },
+        {
+            "season": 14,
+            "episodes": 12
+        },
+        {
+            "season": 15,
+            "episodes": 14
+        },
+        {
+            "season": 16,
+            "episodes": 13
+        },
+        {
+            "season": 17,
+            "episodes": 10
+        },
+        {
+            "season": 18,
+            "episodes": 12
+        },
+        {
+            "season": 19,
+            "episodes": 10
+        },
+        {
+            "season": 20,
+            "episodes": 10
+        },
+        {
+            "season": 21,
+            "episodes": 8
+        },
+        {
+            "season": 22,
+            "episodes": 9
+        },
+        {
+            "season": 23,
+            "episodes": 7
+        },
+        {
+            "season": 24,
+            "episodes": 6
+        },
+        {
+            "season": 25,
+            "episodes": 6
+        },
+        {
+            "season": 26,
+            "episodes": 5
+        }
+    ],
+    "characterComparison": [
+        {
+            "character": "Butters",
+            "screenTime": 35,
+            "lines": 420
+        },
+        {
+            "character": "Cartman",
+            "screenTime": 60,
+            "lines": 750
+        },
+        {
+            "character": "Stan",
+            "screenTime": 50,
+            "lines": 610
+        },
+        {
+            "character": "Kyle",
+            "screenTime": 48,
+            "lines": 590
+        },
+        {
+            "character": "Kenny",
+            "screenTime": 25,
+            "lines": 80
+        }
+    ],
+    "identityComparison": {
+        "Butters": {
+            "traits": ["Innocent", "Obedient", "Frequently victimized"],
+            "appearances": 150
+        },
+        "Professor Chaos": {
+            "traits": ["Chaotic", "Vengeful", "Fueled by rejection"],
+            "appearances": 25
+        }
+    },
+    "crimes": [
+        {
+            "crime": "Fraud",
+            "description": "Claims authorship of a book written by others (\"The Tale of Scrotie McBoogerballs\").",
+            "severity": "Low",
+            "episode": "The Tale of Scrotie McBoogerballs",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Pimping",
+            "description": "Starts a \"kissing company\" that eventually involves real prostitutes.",
+            "severity": "Medium",
+            "episode": "Butters' Bottom B****",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Terrorism",
+            "description": "Threatens to blow up a hospital and takes hostages in a restaurant.",
+            "severity": "High",
+            "episode": "The Coon; The China Probrem",
+            "alias": "Professor Chaos"
+        },
+        {
+            "crime": "Blackmail",
+            "description": "Threatens to leak an embarrassing video of Cartman if he bullies again.",
+            "severity": "Medium",
+            "episode": "AWESOM-O",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Grand Theft Auto",
+            "description": "Helps Cartman steal a NASCAR vehicle causing multiple deaths.",
+            "severity": "High",
+            "episode": "Poor and Stupid",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Breaking and Entering",
+            "description": "Enters properties without permission for various reasons.",
+            "severity": "Low",
+            "episode": "Ginger Kids; Cow Days",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Involuntary Manslaughter",
+            "description": "Accidentally causes deaths by tap dancing.",
+            "severity": "High",
+            "episode": "You Got F'd in the A; I'm a Little Bit Country",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Justified Homicide",
+            "description": "Kills a disguised soldier under presidential order.",
+            "severity": "Justified",
+            "episode": "Sexual Healing",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Piracy",
+            "description": "Joins Somali pirates and engages in looting.",
+            "severity": "High",
+            "episode": "Fatbeard",
+            "alias": "Butters"
+        },
+        {
+            "crime": "War Crimes",
+            "description": "Takes part in a drunken Southern militia reenactment.",
+            "severity": "Justified",
+            "episode": "The Red Badge of Gayness",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Global Catastrophe Attempt",
+            "description": "Plans to flood the world with a hose as Professor Chaos.",
+            "severity": "Low",
+            "episode": "Professor Chaos",
+            "alias": "Professor Chaos"
+        },
+        {
+            "crime": "Aggravated Assault",
+            "description": "Accidentally shoots people during a hostage situation.",
+            "severity": "High",
+            "episode": "The China Probrem",
+            "alias": "Professor Chaos"
+        },
+        {
+            "crime": "Sexual Assault",
+            "description": "Inappropriately touches Paris Hilton and stabs a girl on St. Patrick’s Day.",
+            "severity": "High",
+            "episode": "Stupid Spoiled W**** Video Playset; St. Patrick’s Day",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Indecent Exposure",
+            "description": "Appears nude publicly on multiple occasions.",
+            "severity": "Medium",
+            "episode": "Safe Space; Wieners Out",
+            "alias": "Butters"
+        },
+        {
+            "crime": "False Advertising",
+            "description": "Distributes a sports drink that is actually his semen.",
+            "severity": "High",
+            "episode": "Sarcastaball",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Arson",
+            "description": "Burns down the school gym (implicitly).",
+            "severity": "Medium",
+            "episode": "Gluten Free Ebola",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Public Disorder",
+            "description": "Participates in mall riots and school gender war.",
+            "severity": "Medium",
+            "episode": "Merry Christmas Charlie Manson!; Proper Condom Use",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Sedition",
+            "description": "Joins La Resistance to prevent a government execution.",
+            "severity": "Justified",
+            "episode": "South Park: Bigger, Longer & Uncut",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Election Fraud",
+            "description": "Conspires to alter election results.",
+            "severity": "High",
+            "episode": "Obama Wins!",
+            "alias": "Butters"
+        },
+        {
+            "crime": "Battery",
+            "description": "Violently hits another kid.",
+            "severity": "Medium",
+            "episode": "Going Native",
+            "alias": "Butters"
+        }
+    ]
+}
