@@ -1,101 +1,106 @@
-const DATA_URL = "https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json";
+// URL to your JSON data
+const jsonURL = 'https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json';
 
-async function loadData() {
+// Convenience function to fetch JSON data
+async function fetchData() {
     try {
-        const response = await fetch(DATA_URL);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Error loading JSON:", error);
-        return null;
+        const res = await fetch(jsonURL);
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.error("Error loading JSON:", err);
+        alert("Failed to load data. Check console.");
     }
 }
 
-// Render the radar chart for stats comparison using Chart.js
-function renderStatsComparison(data) {
-    const ctx = document.getElementById("statsComparisonChart").getContext("2d");
-    const characters = data.characterComparison.map(d => d.character);
-    const screenTimes = data.characterComparison.map(d => d.screenTime);
-    const lines = data.characterComparison.map(d => d.lines);
+// --- GRAPH 1: Role Evolution (Line Chart with D3) ---
+function renderRoleEvolution(data) {
+    const svg = d3.select("#roleEvolutionChart");
+    svg.selectAll("*").remove();
 
-    new Chart(ctx, {
-        type: "radar",
-        data: {
-            labels: characters,
-            datasets: [
-                {
-                    label: "Screen Time",
-                    data: screenTimes,
-                    borderColor: "#fce94f",
-                    backgroundColor: "rgba(252, 233, 79, 0.4)",
-                    fill: true,
-                },
-                {
-                    label: "Lines",
-                    data: lines,
-                    borderColor: "#729fcf",
-                    backgroundColor: "rgba(114, 159, 207, 0.4)",
-                    fill: true,
-                },
-            ],
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: "#222222",
-                        font: {
-                            family: "'Atkinson Hyperlegible', monospace",
-                        },
-                    },
-                },
-            },
-            scales: {
-                r: {
-                    angleLines: { color: "#222222" },
-                    grid: { color: "#bbb" },
-                    pointLabels: { color: "#222222", font: { family: "'Atkinson Hyperlegible'" } },
-                    ticks: { color: "#222222" },
-                },
-            },
-        },
-    });
+    const margin = {top: 20, right: 40, bottom: 50, left: 50},
+          width = +svg.node().getBoundingClientRect().width - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom;
+
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // X scale: season (numerical)
+    const x = d3.scaleLinear()
+        .domain(d3.extent(data, d => d.season))
+        .range([0, width]);
+
+    // Y scale: role level as categorical mapped to numeric for the line
+    // Map roles to numbers in order: background=1, named=2, sidekick=3, main=4, leading roles=5
+    const roleMap = {background:1, named:2, sidekick:3, main:4, "leading roles":5};
+    const y = d3.scaleLinear()
+        .domain([1,5])
+        .range([height, 0]);
+
+    // Line generator
+    const line = d3.line()
+        .x(d => x(d.season))
+        .y(d => y(roleMap[d.role]))
+        .curve(d3.curveMonotoneX);
+
+    // X axis
+    g.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x).ticks(data.length).tickFormat(d3.format("d")));
+
+    // Y axis with role labels
+    const yAxis = d3.axisLeft(y)
+        .ticks(5)
+        .tickFormat(tick => {
+            for (let key in roleMap) {
+                if (roleMap[key] === tick) return key;
+            }
+            return "";
+        });
+    g.append("g").call(yAxis);
+
+    // Draw the line
+    g.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "var(--color-butters-yellow)")
+        .attr("stroke-width", 3)
+        .attr("d", line);
+
+    // Points & tooltips
+    g.selectAll("circle")
+        .data(data)
+        .join("circle")
+        .attr("cx", d => x(d.season))
+        .attr("cy", d => y(roleMap[d.role]))
+        .attr("r", 6)
+        .attr("fill", "var(--color-butters-orange)")
+        .on("mouseenter", (event, d) => {
+            const tooltip = g.append("text")
+                .attr("id", "tooltip-role")
+                .attr("x", x(d.season))
+                .attr("y", y(roleMap[d.role]) - 10)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#222")
+                .style("font-size", "12px")
+                .text(`${d.role} (Season ${d.season})`);
+        })
+        .on("mouseleave", () => {
+            g.select("#tooltip-role").remove();
+        });
 }
 
-// Render the crimes list with animation and colored backgrounds
-function renderCrimes(data) {
-    const crimesList = document.getElementById("crimes-list");
-    crimesList.innerHTML = "";
+// --- GRAPH 2: Presence per Season (Flow chart / Bar) ---
+function renderPresenceFlow(data) {
+    const svg = d3.select("#presenceFlowChart");
+    svg.selectAll("*").remove();
 
-    data.crimes.forEach((crime, index) => {
-        const div = document.createElement("div");
-        div.classList.add("crime-item", `crime-${crime.severity}`);
-        div.style.animation = `fadeInUp 0.5s ease forwards`;
-        div.style.animationDelay = `${index * 0.2}s`;
-        div.innerHTML = `<strong>${crime.crime} (${crime.alias})</strong><br>${crime.description}<br><em>Episode: ${crime.episode}</em>`;
-        crimesList.appendChild(div);
-    });
-}
+    const margin = {top: 20, right: 40, bottom: 40, left: 50},
+          width = +svg.node().getBoundingClientRect().width - margin.left - margin.right,
+          height = +svg.attr("height") - margin.top - margin.bottom;
 
-// Animation keyframes via JS injection (needed for crimes fade in)
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = `
-@keyframes fadeInUp {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}`;
-document.head.appendChild(styleSheet);
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-// Main initialization
-(async () => {
-    const data = await loadData();
-    if (!data) return;
-
-    renderStatsComparison(data);
-    renderCrimes(data);
-
-    // TODO: add D3.js charts for other sections (role evolution, presence, protagonism)
-})();
+    const x = d3.scaleBand()
+        .domain(data.map(d => d.season))
+        .range([0, width])
+        .padding(0.
