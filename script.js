@@ -1,4 +1,4 @@
-// URL to your JSON data
+// JSON
 const jsonURL = 'https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json';
 
 // Convenience function to fetch JSON data
@@ -13,7 +13,7 @@ async function fetchData() {
     }
 }
 
-// --- GRAPH 1: Role Evolution (Line Chart with D3) ---
+// GRAPH 1
 function renderRoleEvolution(data) {
     const svg = d3.select("#roleEvolutionChart");
     svg.selectAll("*").remove();
@@ -89,7 +89,7 @@ function renderRoleEvolution(data) {
         });
 }
 
-// --- GRAPH 2: Presence per Season (Flow chart / Bar) ---
+// GRAPH 2
 function renderPresenceFlow(data) {
     const svg = d3.select("#presenceFlowChart");
     svg.selectAll("*").remove();
