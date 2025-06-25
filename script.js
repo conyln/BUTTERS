@@ -185,7 +185,7 @@ function renderCrimes(crimes) {
 
     const gifUrl = gifMap[crime.severity] || gifMap["Low"];
     div.innerHTML = `
-      <img src="${gifUrl}" alt="Butters dancing ${crime.severity} severity" class="crime-gif" style="width:80px;float:left;margin-right:1rem;border-radius:8px;box-shadow:0 0 5px #ddd;">
+      <img src="${gifUrl}" alt="Butters dancing ${crime.severity} severity" class="crime-gif" style="width:100px;float:left;margin-right:1rem;border-radius:8px;">
       <div>
         <p><strong>${crime.crime}</strong> (${crime.alias})</p>
         <p>${crime.description}</p>
