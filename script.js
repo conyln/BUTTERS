@@ -1,160 +1,101 @@
-// script.js
+const DATA_URL = "https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json";
 
-// URL del JSON
-const DATA_URL = 'https://raw.githubusercontent.com/conyln/BUTTERS/refs/heads/main/datos.json';
-
-// Fetch JSON y activar renderizado cuando esté disponible
-fetch(DATA_URL)
-  .then(response => response.json())
-  .then(data => {
-    renderRoleEvolution(data.roleEvolution);
-    renderPresenceBySeason(data.presenceBySeason);
-    renderProtagonismComparison(data.presenceBySeason);
-    renderStatsComparison(data.characterComparison);
-    renderCrimes(data.crimes);
-  })
-  .catch(err => console.error('Error loading JSON:', err));
-
-// Función: Línea de tiempo - Role Evolution (usando D3.js como placeholder)
-function renderRoleEvolution(data) {
-  const svg = d3.select('#roleEvolutionChart');
-  svg.selectAll('*').remove();
-
-  const width = 600, height = 100;
-  svg.attr('width', width).attr('height', height);
-
-  const xScale = d3.scaleLinear()
-    .domain([1, d3.max(data, d => d.season)])
-    .range([50, width - 50]);
-
-  svg.selectAll('circle')
-    .data(data)
-    .enter()
-    .append('circle')
-    .attr('cx', d => xScale(d.season))
-    .attr('cy', height / 2)
-    .attr('r', 6)
-    .attr('fill', '#87CEEB');
-
-  svg.selectAll('text')
-    .data(data)
-    .enter()
-    .append('text')
-    .attr('x', d => xScale(d.season))
-    .attr('y', height / 2 + 20)
-    .attr('text-anchor', 'middle')
-    .attr('font-size', '12px')
-    .text(d => d.role);
+async function loadData() {
+    try {
+        const response = await fetch(DATA_URL);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error loading JSON:", error);
+        return null;
+    }
 }
 
-// Función: Gráfico de flujo - Presence per Season (D3 bar chart)
-function renderPresenceBySeason(data) {
-  const svg = d3.select('#presenceFlowChart');
-  svg.selectAll('*').remove();
-  const width = 600, height = 200;
-  svg.attr('width', width).attr('height', height);
-
-  const xScale = d3.scaleBand()
-    .domain(data.map(d => d.season))
-    .range([50, width - 20])
-    .padding(0.2);
-
-  const yScale = d3.scaleLinear()
-    .domain([0, d3.max(data, d => d.episodes)])
-    .range([height - 20, 20]);
-
-  svg.selectAll('rect')
-    .data(data)
-    .enter()
-    .append('rect')
-    .attr('x', d => xScale(d.season))
-    .attr('y', d => yScale(d.episodes))
-    .attr('width', xScale.bandwidth())
-    .attr('height', d => height - 20 - yScale(d.episodes))
-    .attr('fill', '#FFD700');
-
-  svg.selectAll('text')
-    .data(data)
-    .enter()
-    .append('text')
-    .attr('x', d => xScale(d.season) + xScale.bandwidth() / 2)
-    .attr('y', d => yScale(d.episodes) - 5)
-    .attr('text-anchor', 'middle')
-    .attr('font-size', '10px')
-    .text(d => d.episodes);
-}
-
-// Función: Comparación de protagonismo (ejemplo básico usando mismos datos que Presence)
-function renderProtagonismComparison(data) {
-  const svg = d3.select('#protagonismFlowChart');
-  svg.selectAll('*').remove();
-  const width = 600, height = 150;
-  svg.attr('width', width).attr('height', height);
-
-  const line = d3.line()
-    .x(d => d.season * 20)
-    .y(d => height - d.episodes * 5);
-
-  svg.append('path')
-    .datum(data)
-    .attr('d', line)
-    .attr('fill', 'none')
-    .attr('stroke', '#00BFFF')
-    .attr('stroke-width', 2);
-}
-
-// Función: Comparación de personajes (Chart.js)
+// Render the radar chart for stats comparison using Chart.js
 function renderStatsComparison(data) {
-  const ctx = document.getElementById('statsComparisonChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'radar',
-    data: {
-      labels: ['Screen Time', 'Lines'],
-      datasets: data.map(char => ({
-        label: char.character,
-        data: [char.screenTime, char.lines],
-        fill: true
-      }))
-    },
-    options: {
-      responsive: true,
-      scales: {
-        r: {
-          angleLines: { display: false },
-          suggestedMin: 0,
-          suggestedMax: 1000
-        }
-      }
-    }
-  });
+    const ctx = document.getElementById("statsComparisonChart").getContext("2d");
+    const characters = data.characterComparison.map(d => d.character);
+    const screenTimes = data.characterComparison.map(d => d.screenTime);
+    const lines = data.characterComparison.map(d => d.lines);
+
+    new Chart(ctx, {
+        type: "radar",
+        data: {
+            labels: characters,
+            datasets: [
+                {
+                    label: "Screen Time",
+                    data: screenTimes,
+                    borderColor: "#fce94f",
+                    backgroundColor: "rgba(252, 233, 79, 0.4)",
+                    fill: true,
+                },
+                {
+                    label: "Lines",
+                    data: lines,
+                    borderColor: "#729fcf",
+                    backgroundColor: "rgba(114, 159, 207, 0.4)",
+                    fill: true,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "#222222",
+                        font: {
+                            family: "'Atkinson Hyperlegible', monospace",
+                        },
+                    },
+                },
+            },
+            scales: {
+                r: {
+                    angleLines: { color: "#222222" },
+                    grid: { color: "#bbb" },
+                    pointLabels: { color: "#222222", font: { family: "'Atkinson Hyperlegible'" } },
+                    ticks: { color: "#222222" },
+                },
+            },
+        },
+    });
 }
 
-// Función: Renderizar delitos con color según gravedad
-function renderCrimes(crimes) {
-  const container = document.getElementById('crimes-list');
-  crimes.forEach(crime => {
-    const div = document.createElement('div');
-    div.className = 'crime-card';
+// Render the crimes list with animation and colored backgrounds
+function renderCrimes(data) {
+    const crimesList = document.getElementById("crimes-list");
+    crimesList.innerHTML = "";
 
-    // Color de fondo según gravedad
-    let bgColor = '#eee';
-    switch (crime.severity.toLowerCase()) {
-      case 'low':
-      case 'justified':
-        bgColor = '#d1f0d1'; break;
-      case 'medium':
-        bgColor = '#ffe7a2'; break;
-      case 'high':
-        bgColor = '#f5a3a3'; break;
-    }
-
-    div.style.backgroundColor = bgColor;
-    div.innerHTML = `
-      <h4>${crime.crime}</h4>
-      <p><strong>Alias:</strong> ${crime.alias}</p>
-      <p><strong>Episode:</strong> ${crime.episode}</p>
-      <p>${crime.description}</p>
-    `;
-    container.appendChild(div);
-  });
+    data.crimes.forEach((crime, index) => {
+        const div = document.createElement("div");
+        div.classList.add("crime-item", `crime-${crime.severity}`);
+        div.style.animation = `fadeInUp 0.5s ease forwards`;
+        div.style.animationDelay = `${index * 0.2}s`;
+        div.innerHTML = `<strong>${crime.crime} (${crime.alias})</strong><br>${crime.description}<br><em>Episode: ${crime.episode}</em>`;
+        crimesList.appendChild(div);
+    });
 }
+
+// Animation keyframes via JS injection (needed for crimes fade in)
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = `
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}`;
+document.head.appendChild(styleSheet);
+
+// Main initialization
+(async () => {
+    const data = await loadData();
+    if (!data) return;
+
+    renderStatsComparison(data);
+    renderCrimes(data);
+
+    // TODO: add D3.js charts for other sections (role evolution, presence, protagonism)
+})();
