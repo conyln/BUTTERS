@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+
+:root {
+    --color-butters-yellow: #fce94f;
+    --color-butters-blue: #87CEEB; /* color de la chaqueta */
+    --color-butters-orange: #fcaf3e;
+    --color-butters-red: #ef2929;
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #222222;
+    --color-text-dark: #222222;
+    --color-text-light: #eeeeee;
+}
+
+body {
+    font-family: 'Atkinson Hyperlegible', monospace, monospace;
+    background-color: var(--color-butters-blue); /* fondo celeste */
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Contenedor principal blanco */
+main {
+    background-color: var(--color-bg-light);
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados */
+h2 {
+    color: var(--color-butters-yellow);
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    background-color: #222222;
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+}
+
+p {
+    max-width: 720px;
+    margin: 0.5rem auto 2rem auto;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Header y SVGs */
+header {
+    position: relative;
+    max-width: 1000px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#header-svg {
+    width: 100%;
+    height: auto;
+    animation: slideDown 1s ease forwards;
+    opacity: 0;
+}
+
+#circle-butters-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 2rem auto;
+    border-radius: 50%;
+    background-color: black;
+    overflow: hidden;
+    animation: circleFadeIn 1s ease 1.2s forwards;
+    opacity: 0;
+}
+
+#circle-butters-svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes circleFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating head */
+.floating-butters-head {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 64px;
+    height: 64px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Gráficos */
+.chart-svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 720px;
+    height: 300px;
+}
+
+/* Flip Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    outline: none;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.flip-card:focus .flip-card-inner,
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background: var(--color-butters-yellow);
+    color: var(--color-text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.flip-card-front {
+    font-weight: 700;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Crimes section */
+.crimes-container {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    gap: 1rem;
+}
+
+.gifs-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 120px;
+}
+
+.gifs-column img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #ddd;
+}
+
+.crimes-list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 600px;
+    padding: 0.5rem;
+}
+
+.crime-item {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+}
+
+.crime-Justified {
+    background-color: #8bc34a; /* green */
+}
+
+.crime-Low {
+    background-color: #f9a825; /* yellow-orange */
+}
+
+.crime-Medium {
+    background-color: #fb8c00; /* orange */
+}
+
+.crime-High {
+    background-color: #d32f2f; /* red */
+}
