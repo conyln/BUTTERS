@@ -1,134 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BUTTERS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BUTTERS Infographic</title>
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-</head>
+  <body data-theme="light">
+    <!-- Floating Butters Head -->
+    <img
+      src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3RydzRoc214Y3lreDcwYmhuaGZ5ZWMyOHNwc3l4aXAwcW9rZTZiNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9epLcGP4t7YTLNOxpo/giphy.gif"
+      alt="Floating Butters Head"
+      class="floating-butters-head"
+    />
 
-<body data-theme="light">
-  <!-- Floating Butters Head -->
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3RydzRoc214Y3lreDcwYmhuaGZ5ZWMyOHNwc3l4aXAwcW9rZTZiNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9epLcGP4t7YTLNOxpo/giphy.gif"
-    alt="Floating Butters Head" class="floating-butters-head" />
+    <!-- Header with svg Title -->
+    <header>
+      <object
+        id="header-svg"
+        data="img/BUTTERS_SHOW.svg"
+        type="image/svg+xml"
+        aria-label="Butters Show Title"
+      ></object>
+      <div id="circle-butters-container">
+        <object
+          id="circle-butters-svg"
+          data="img/BUTTERS.svg"
+          type="image/svg+xml"
+          aria-label="Butters svg"
+        ></object>
+      </div>
+    </header>
 
-  <!-- Header with SVG Title -->
-  <header>
-    <object id="header-svg" data="img/BUTTERS_SHOW.svg" type="image/svg+xml" aria-label="Butters Show Title"></object>
-    <div id="circle-butters-container">
-      <object id="circle-butters-svg" data="img/BUTTERS.svg" type="image/svg+xml" aria-label="Butters SVG"></object>
-    </div>
-  </header>
+    <main>
+      <!-- Section: Role Evolution -->
+      <section id="role-evolution" aria-label="Character Role Evolution">
+        <h2>1. Character Role Evolution</h2>
+        <svg id="roleEvolutionChart" class="chart-svg"></svg>
+        <p>
+          Butters evolved from a background character to a core figure, gaining
+          narrative depth and complexity over time.
+        </p>
+      </section>
 
-  <main>
-    <!-- Section: Role Evolution -->
-    <section id="role-evolution" aria-label="Character Role Evolution">
-      <h2>1. Character Role Evolution</h2>
-      <svg id="roleEvolutionChart" class="chart-svg"></svg>
-      <p>
-        Butters evolved from a background character to a core figure, gaining
-        narrative depth and complexity over time.
-      </p>
-    </section>
+      <!-- Section: Presence per Season -->
+      <section id="presence-season" aria-label="Character Presence per Season">
+        <h2>2. Presence per Season</h2>
+        <svg id="presenceFlowChart" class="chart-svg"></svg>
+        <p>
+          The chart shows Butters' presence throughout the seasons, highlighting
+          growth and episodic appearances.
+        </p>
+      </section>
 
-    <!-- Section: Presence per Season -->
-    <section id="presence-season" aria-label="Character Presence per Season">
-      <h2>2. Presence per Season</h2>
-      <svg id="presenceFlowChart" class="chart-svg"></svg>
-      <p>
-        The chart shows Butters' presence throughout the seasons, highlighting
-        growth and episodic appearances.
-      </p>
-    </section>
+      <!-- Section: Protagonism Comparison -->
+      <section id="protagonism-comparison" aria-label="Protagonism Comparison">
+        <h2>3. Protagonism by Season (Comparison)</h2>
+        <svg id="protagonismFlowChart" class="chart-svg"></svg>
+        <p>
+          Comparing Butters' protagonism to main characters: Stan, Kyle,
+          Cartman, and Kenny.
+        </p>
+      </section>
 
-    <!-- Section: Protagonism Comparison -->
-    <section id="protagonism-comparison" aria-label="Protagonism Comparison">
-      <h2>3. Protagonism by Season (Comparison)</h2>
-      <svg id="protagonismFlowChart" class="chart-svg"></svg>
-      <p>
-        Comparing Butters' protagonism to main characters: Stan, Kyle, Cartman,
-        and Kenny.
-      </p>
-    </section>
+      <!-- Section: Stats Comparison -->
+      <section
+        id="stats-comparison"
+        aria-label="Stats Comparison with Main Characters"
+      >
+        <h2>4. Stats Comparison</h2>
+        <canvas
+          id="statsComparisonChart"
+          aria-label="Radar chart comparing characters"
+        ></canvas>
+      </section>
 
-    <!-- Section: Stats Comparison -->
-    <section id="stats-comparison" aria-label="Stats Comparison with Main Characters">
-      <h2>4. Stats Comparison</h2>
-      <canvas id="statsComparisonChart" aria-label="Radar chart comparing characters"></canvas>
-    </section>
-
-    <!-- Section: Identity Duality -->
-    <section id="identity-duality" aria-label="Butters vs Professor Chaos">
-      <h2>5. Dual Identity: Butters vs Professor Chaos</h2>
-      <div class="card-container">
-        <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="Butters Card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <object data="img/BUTTERS.svg" type="image/svg+xml" aria-label="Butters Image"></object>
-              <h3>Butters</h3>
+      <!-- Section: Identity Duality -->
+      <section id="identity-duality" aria-label="Butters vs Professor Chaos">
+        <h2>5. Dual Identity: Butters vs Professor Chaos</h2>
+        <div class="card-container">
+          <div
+            class="flip-card"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="Butters Card"
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <object
+                  data="img/BUTTERS.svg"
+                  type="image/svg+xml"
+                  aria-label="Butters Image"
+                ></object>
+                <h3>Butters</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Innocent, obedient, and often the victim of circumstances.
+                  Beloved for his vulnerability.
+                </p>
+              </div>
             </div>
-            <div class="flip-card-back">
-              <p>
-                Innocent, obedient, and often the victim of circumstances.
-                Beloved for his vulnerability.
-              </p>
+          </div>
+
+          <div
+            class="flip-card"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+            aria-label="Professor Chaos Card"
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <object
+                  data="img/PROFFESSOR_CHAOS.svg"
+                  type="image/svg+xml"
+                  aria-label="Professor Chaos Image"
+                ></object>
+                <h3>Professor Chaos</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Chaotic, vengeful alter ego fueled by rejection and
+                  frustration.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="flip-card" tabindex="0" role="button" aria-pressed="false"
-          aria-label="Professor Chaos Card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <object data="img/PROFESSOR_CHAOS.svg" type="image/svg+xml"
-                aria-label="Professor Chaos Image"></object>
-              <h3>Professor Chaos</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Chaotic, vengeful alter ego fueled by rejection and frustration.
-              </p>
-            </div>
-          </div>
+      <!-- Section: Crimes -->
+      <section
+        id="crimes"
+        aria-label="Crimes Committed by Butters, Professor Chaos and Cartman"
+      >
+        <h2>6. Crimes Committed</h2>
+        <div class="crimes-container">
+          <div class="crimes-list" id="crimes-list"></div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Section: Crimes -->
-    <section id="crimes" aria-label="Crimes Committed by Butters, Professor Chaos and Cartman">
-      <h2>6. Crimes Committed</h2>
-      <div class="crimes-container">
-        <div class="gifs-column">
-          <img id="gif-justified-low"
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KeJaNM7Uee43KoodYn/giphy.gif"
-            alt="Butters dancing low severity" />
-          <img id="gif-medium"
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fq8aPV216Lu5CdKtjt/giphy.gif"
-            alt="Butters dancing medium severity" />
-          <img id="gif-high"
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw5OTY4cHVpd2JxdTdxczZ3enQ1OW8ydzNmMHJtbXJyOW1nNTMyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/SqqNETwLOEu6VbHLNj/giphy.gif"
-            alt="Butters dancing high severity" />
-        </div>
-        <div class="crimes-list" id="crimes-list"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-<p style="font-size: 16px; line-height: 1.6;">
+    <footer>
+      <p style="font-size: 14px; line-height: 1.2;">
     Data unofficial, compiled from South Park episodes.<br>
     Designed by <a href="https://github.com/conyln" target="_blank" style="color: #005751; text-decoration: underline;">Conyln (*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ ☆
     </a><br>
     Dare to meet another 
     <a href="https://conyln.github.io/dno096-13/" target="_blank" style="color: #005751; text-decoration: underline;">VILLAIN</a> like PROFESSOR CHAOS?
   </p>
-  </footer>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
