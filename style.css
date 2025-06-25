@@ -5,8 +5,8 @@
     --color-butters-blue: #729fcf;
     --color-butters-orange: #fcaf3e;
     --color-butters-red: #ef2929;
-    --color-bg-light: #729fcf; /* celeste chaqueta Butters */
-    --color-bg-container: #ffffff; /* blanco para el container */
+    --color-bg-light: #729fcf; /* Butters jacket blue */
+    --color-container-bg: #ffffff;
     --color-text-dark: #222222;
     --color-text-light: #eeeeee;
 }
@@ -20,34 +20,21 @@ body {
     line-height: 1.4;
 }
 
-.container {
-    background-color: var(--color-bg-container);
+main {
+    background-color: var(--color-container-bg);
     max-width: 900px;
     margin: 2rem auto 4rem auto;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 2rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-h2 {
-    color: var(--color-butters-yellow);
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-p {
-    max-width: 720px;
-    margin: 0.5rem auto 2rem auto;
-    text-align: center;
-    font-size: 1rem;
-}
-
+/* Header */
 header {
     position: relative;
     max-width: 720px;
     margin: 2rem auto 3rem auto;
+    text-align: center;
 }
 
 #header-svg {
@@ -96,6 +83,7 @@ header {
     }
 }
 
+/* Floating Butters Head */
 .floating-butters-head {
     position: fixed;
     top: 1rem;
@@ -106,11 +94,29 @@ header {
     pointer-events: none;
 }
 
+/* General Chart SVG styles */
 .chart-svg {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto;
     max-width: 720px;
     height: 300px;
+}
+
+/* Headings */
+h2 {
+    color: var(--color-butters-yellow);
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+p {
+    max-width: 720px;
+    margin: 0.5rem auto 2rem auto;
+    text-align: center;
+    font-size: 1rem;
 }
 
 /* Flip Cards for Identity Duality */
@@ -153,7 +159,6 @@ header {
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
-    /* Safari */
     backface-visibility: hidden;
     border-radius: 10px;
     background: var(--color-butters-yellow);
@@ -216,22 +221,27 @@ header {
     animation-fill-mode: forwards;
 }
 
+/* Colors by severity */
 .crime-Justified {
-    background-color: #8bc34a;
-    /* green */
+    background-color: #8bc34a; /* green */
 }
 
 .crime-Low {
-    background-color: #f9a825;
-    /* yellow-orange */
+    background-color: #f9a825; /* yellow-orange */
 }
 
 .crime-Medium {
-    background-color: #fb8c00;
-    /* orange */
+    background-color: #fb8c00; /* orange */
 }
 
 .crime-High {
-    background-color: #d32f2f;
-    /* red */
+    background-color: #d32f2f; /* red */
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    padding-bottom: 1rem;
+    margin-top: 3rem;
 }
